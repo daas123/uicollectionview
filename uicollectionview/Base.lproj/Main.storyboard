@@ -22,13 +22,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rag-8Y-RYq">
                                     <size key="itemSize" width="261" height="193"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectionViewCell" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="HnE-oD-u4e" customClass="CollectionViewCell" customModule="uicollectionview" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="200"/>
+                                        <rect key="frame" x="0.0" y="50" width="182" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uWg-yn-odF">
                                             <rect key="frame" x="0.0" y="0.0" width="182" height="200"/>
@@ -64,16 +64,53 @@
                                             <outlet property="label" destination="VfO-0r-Hk2" id="DpI-bJ-qWX"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qIR-hv-6TJ">
-                                        <rect key="frame" x="211" y="0.0" width="182" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mvo-pt-UUu">
-                                            <rect key="frame" x="0.0" y="0.0" width="182" height="200"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="182" height="200"/>
-                                    </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HeaderCollectionViewCell" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Headercell" id="WI3-wB-bvR" customClass="HeaderCollectionReusableView" customModule="uicollectionview" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee count is 13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6i-RW-tjO">
+                                            <rect key="frame" x="18" y="13" width="357" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="h6i-RW-tjO" firstAttribute="leading" secondItem="WI3-wB-bvR" secondAttribute="leadingMargin" constant="10" id="WNV-BW-ldI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="h6i-RW-tjO" secondAttribute="trailing" constant="10" id="Zhs-6g-n3L"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="h6i-RW-tjO" secondAttribute="bottom" constant="5" id="kc6-IA-LaE"/>
+                                        <constraint firstItem="h6i-RW-tjO" firstAttribute="top" secondItem="WI3-wB-bvR" secondAttribute="topMargin" constant="5" id="uGh-c8-bZ9"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="headerlabel" destination="h6i-RW-tjO" id="O9N-1u-C1i"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="footerCollectionReusableView" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Footercell" id="zH9-Jr-cC4" customClass="footerCollectionReusableView" customModule="uicollectionview" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="250" width="393" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by @Saad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-L4-XiP">
+                                            <rect key="frame" x="18" y="13" width="357" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rwd-L4-XiP" secondAttribute="bottom" constant="5" id="BJ8-Zf-7I7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rwd-L4-XiP" secondAttribute="trailing" constant="10" id="KVt-fo-bCw"/>
+                                        <constraint firstItem="rwd-L4-XiP" firstAttribute="top" secondItem="zH9-Jr-cC4" secondAttribute="topMargin" constant="5" id="TUy-LM-3QH"/>
+                                        <constraint firstItem="rwd-L4-XiP" firstAttribute="leading" secondItem="zH9-Jr-cC4" secondAttribute="leadingMargin" constant="10" id="mi2-0X-ayS"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="footerlabel" destination="rwd-L4-XiP" id="6sG-sd-X4g"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="54p-kA-PID"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cHu-ZO-VMY"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

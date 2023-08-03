@@ -49,9 +49,13 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        var cnt = arr[indexPath.row]
+        let cnt = arr[indexPath.row]
         cell.image.image = UIImage(named: cnt.name)
         cell.label.text = cnt.name
+        
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.backgroundColor = .gray
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -64,7 +68,22 @@ extension ViewController : UICollectionViewDelegate , UICollectionViewDataSource
         vc.img = UIImage(named: cnt.name)
         vc.lbl = cnt.name
         navigationController?.pushViewController(vc, animated: true)
-        
-        
+    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            if let header = collectionView.dequeueReusableCell(withReuseIdentifier: "Headercell", for: indexPath) as? HeaderCollectionReusableView
+            {
+                header.headerlabel.text = "header"
+                return header
+            } else if let footer = collectionView.dequeueReusableCell(withReuseIdentifier: "Footercell", for: indexPath) as? footerCollectionReusableView
+            {
+                footer.footerlabel.text = "footer"
+                return footer
+            }
+                
+        default :print("hello")
+        }
+        return UICollectionViewCell()
     }
 }
